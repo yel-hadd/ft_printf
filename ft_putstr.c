@@ -6,16 +6,17 @@
 /*   By: yel-hadd <yel-hadd@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 00:05:31 by yel-hadd          #+#    #+#             */
-/*   Updated: 2022/11/27 00:10:11 by yel-hadd         ###   ########.fr       */
+/*   Updated: 2022/11/27 00:49:15 by yel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s, int *count)
+int	ft_putstr(char *s)
 {
-	if (!s)
-		return ;
+    if (!s)
+		return (0);
 	while (*s)
-        ft_putchar(*s ++, count);
+        ft_putchar(*s ++);
+    return (1);
 }

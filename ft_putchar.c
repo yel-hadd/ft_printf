@@ -6,12 +6,14 @@
 /*   By: yel-hadd <yel-hadd@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 23:02:40 by yel-hadd          #+#    #+#             */
-/*   Updated: 2022/11/27 00:07:38 by yel-hadd         ###   ########.fr       */
+/*   Updated: 2022/11/27 00:47:08 by yel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar_fd(char c, int *count)
+#include "ft_printf.h"
+
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-    *count += 1;
+	return (1);
 }
