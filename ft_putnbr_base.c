@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadd <yel-hadd@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/26 23:02:40 by yel-hadd          #+#    #+#             */
-/*   Updated: 2022/11/29 14:34:46 by yel-hadd         ###   ########.fr       */
+/*   Created: 2022/11/28 16:40:31 by yel-hadd          #+#    #+#             */
+/*   Updated: 2022/11/29 14:43:36 by yel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf.h" 
 
-void	ft_putchar(char c, int *count)
+void	ft_putnbr_base(unsigned int nbr, char *base, int *count)
 {
-	write(1, &c, 1);
-	*count = *count + 1;
+	if (nbr < 16)
+		ft_putchar(base[nbr], count);
+	else
+	{
+		ft_putnbr_base(nbr / 16, base, count);
+		ft_putnbr_base(nbr % 16, base, count);
+	}
 }

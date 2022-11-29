@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yel-hadd <yel-hadd@mail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/26 23:02:40 by yel-hadd          #+#    #+#             */
-/*   Updated: 2022/11/29 14:34:46 by yel-hadd         ###   ########.fr       */
+/*   Created: 2022/11/29 14:48:14 by yel-hadd          #+#    #+#             */
+/*   Updated: 2022/11/29 14:48:47 by yel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, int *count)
+void	ft_putunbr(unsigned int n, int *count)
 {
-	write(1, &c, 1);
-	*count = *count + 1;
+	char	zero;
+
+	zero = '0';
+	if (n <= 9)
+	{
+		zero += n;
+		ft_putchar(zero, count);
+	}
+	else
+	{
+		ft_putnbr(n / 10, count);
+		ft_putnbr(n % 10, count);
+	}
 }
