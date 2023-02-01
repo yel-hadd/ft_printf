@@ -1,5 +1,5 @@
 # ft_printf
-In this project I will create my own minimal version of printf, this project helped me learn variadic function in C.
+In this project I will create my own minimal version of printf, this project helped me learn variadic functions in C.
 
 ## Installation & Usage
 To use ft_printf, clone the repository and compile it with the following commands:
